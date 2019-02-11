@@ -1,0 +1,26 @@
+{
+  "name": "health-office",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:SokolovAlex/health-office.git",
+  "author": "sokolov alex <alex.sklv85@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "start": "npm run develop",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "gatsby": "^2.0.118",
+    "gatsby-plugin-manifest": "^2.0.17",
+    "gatsby-plugin-offline": "^2.0.23",
+    "gatsby-plugin-react-helmet": "^3.0.6",
+    "gatsby-plugin-sass": "^2.0.10",
+    "lodash": "^4.17.11",
+    "pretty": "^2.0.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-helmet": "^5.2.0"
+  }
+}
