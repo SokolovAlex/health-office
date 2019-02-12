@@ -5,6 +5,9 @@ const mkdirp = require('mkdirp');
 const globby = require('globby');
 const pretty = require('pretty');
 
+const scriptReg = /<script+.*>+.*<\/script>/g;
+const linkReg = /<link as+.*\/>/g;
+
 (async () => {
   const src = normalize(`${__dirname}/../public/**/*.html`);
   const dest = normalize(`${__dirname}/../deploy`);
@@ -13,9 +16,7 @@ const pretty = require('pretty');
   const paths = await globby([src]);
 
   paths.forEach((path) => {
-    console.log(`---> ${path}\n`)
-
-    const content = fs.readFileSync(path, 'utf-8');
+    let content = fs.readFileSync(path, 'utf-8');
     const folder = dirname(path).split('/').pop();
 
     let filename = basename(path);
@@ -23,7 +24,11 @@ const pretty = require('pretty');
       ? `${folder}.html`
       : filename;
 
-      console.log(`result --->`, filename, folder);
+    content = content.replace(scriptReg, '');
+    content = content.replace(linkReg, '');
+
     fs.writeFileSync(join(dest, filename), pretty(content));
+
+    console.log(`modify ${path} ---> ${filename}`);
   });
 })();
