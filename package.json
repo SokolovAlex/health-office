@@ -9,7 +9,8 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "start": "npm run develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "deploy": "node scripts/deploy"
   },
   "dependencies": {
     "gatsby": "^2.0.118",
@@ -17,7 +18,10 @@
     "gatsby-plugin-offline": "^2.0.23",
     "gatsby-plugin-react-helmet": "^3.0.6",
     "gatsby-plugin-sass": "^2.0.10",
+    "gatsby-plugin-typescript": "^2.0.7",
+    "globby": "^9.0.0",
     "lodash": "^4.17.11",
+    "mkdir": "^0.0.2",
     "pretty": "^2.0.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",

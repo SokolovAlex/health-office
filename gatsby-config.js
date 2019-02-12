@@ -27,6 +27,7 @@ module.exports = {
         icon: `content/gatsby-icon.png`,
       },
     },
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
   ],
